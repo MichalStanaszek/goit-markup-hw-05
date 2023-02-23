@@ -343,6 +343,31 @@ img {
 
 /* portfolio - siatka produktów */
 
+.card-layer {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-layer:hover .overlay {
+  transform: translatex(0);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  max-width: 370px;
+  max-height: 294px;
+  padding: 49px 45px 49px 24px;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 28px;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translatey(150%);
+  transition: transform 250ms ease;
+}
+
 .card-set {
   display: flex;
   flex-wrap: wrap;
