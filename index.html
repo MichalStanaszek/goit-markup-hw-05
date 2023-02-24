@@ -63,7 +63,9 @@
     <main>
       <div class="wrapper">
         <h1 class="header">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-        <button class="order-button" type="button">Zamów usługe</button>
+        <button class="order-button modal-btn" type="button" data-modal-open>
+          Zamów usługe
+        </button>
       </div>
       <div class="post container">
         <div>
@@ -140,12 +142,12 @@
           </div>
           <div class="thumb">
             <img
-            src="./images/Main-page/smartphone-configuration.jpg"
-            alt="smartphone configuration"
-            width="370"
-            height="294"
-          />
-          <p class="label2">aplikacje mobilne</p>
+              src="./images/Main-page/smartphone-configuration.jpg"
+              alt="smartphone configuration"
+              width="370"
+              height="294"
+            />
+            <p class="label2">aplikacje mobilne</p>
           </div>
           <div class="thumb">
             <img
@@ -379,5 +381,11 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-btn" data-modal-close>&#10006</button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
