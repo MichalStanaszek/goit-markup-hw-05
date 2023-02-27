@@ -11,6 +11,7 @@ body {
   font-size: 14px;
   line-height: 24px;
   width: 1600px;
+  margin: 0 auto;
 }
 
 .flex {
@@ -538,41 +539,54 @@ img {
 }
 
 /* okno modalne */
+@keyframes scaleModal {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .backdrop {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 90;
   background: rgba(0, 0, 0, 0.2);
+  visibility: visible;
+  opacity: 1;
+  transition-property: opacity, visibility;
+  transform: translate(-50% -50%) scale(0.25);
 }
 
 .modal {
   position: absolute;
   top: 221px;
-  left: 536px;
-  transform: translate(-50% -50%);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   width: 528px;
   height: 581px;
-  animation-name: modalWindow;
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation: scaleModal 2000ms 0s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes modalWindow {
-  0% {
-    scale: 0;
-  }
-  50% {
-    scale: 1.25;
-  }
-  100% {
-    scale: 1;
-  }
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .close-btn {
@@ -586,10 +600,4 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
-}
-
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
