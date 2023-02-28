@@ -561,10 +561,7 @@ img {
   height: 100%;
   z-index: 90;
   background: rgba(0, 0, 0, 0.2);
-  visibility: visible;
-  opacity: 1;
-  transition-property: opacity, visibility;
-  transform: translate(-50% -50%) scale(0.25);
+  transition: opacity 5000ms ease visibility 500ms ease;
 }
 
 .modal {
@@ -583,7 +580,7 @@ img {
   animation: scaleModal 2000ms 0s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
